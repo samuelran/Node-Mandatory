@@ -1,0 +1,56 @@
+<link rel='stylesheet' href='/style.css' />
+<%- include('components/header')%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interacting with Git in Node.js</title>
+</head>
+<body>
+
+	<header>
+		<h1>Interacting with Git in Node.js</h1>
+	</header>
+
+	<section>
+		<h2>Introduction</h2>
+		<p>This is a guide for using git commands in node.js</p>
+	</section>
+
+	<section>
+		<h2>Getting Started</h2>
+		<p>Check if git is installed by running the following command</p>
+		<code>git --version</code>
+		<p>If Git is not installed, you can download and install it from the official Git website.</p>
+	</section>
+
+	<section>
+		<h2>Cloning a Repository</h2>
+		<p>To clone a repository, you can use the "git clone" command for example the command below</p>
+		<code>git clone https://github.com/example/example.git</code>
+		<p>This will create a local copy of the repository in your current directory.</p>
+	</section>
+
+	<section>
+		<h2>Committing Changes</h2>
+		<p>Once you've made changes to your code, you'll need to commit them to Git. To do this, you can use the "git add" command to stage your changes, followed by the "git commit" command to commit them. For example:</p>
+		<code>git add .</code>
+		<code>git commit -m "Added new feature"</code>
+		<p>This will stage all changes in your current directory and commit them with the message "Added new feature".</p>
+	</section>
+
+	<section>
+		<h2>Pushing Changes</h2>
+		<p>After you've committed your changes, you can push them to the remote repository using the "git push" command. For example:</p>
+		<code>git push</code>
+		<p>This will push your changes to the default branch of the remote repository.</p>
+	</section>
+
+	<section>
+		<h2>Pulling Changes</h2>
+		<p>To pull changes from your repository, you can use this. For example:</p>
+		<code>git pull</code>
+		<p>This will pull any changes from the remote repository and merge them with your local repository.</p>
+	</section>
+
+</body>
+</html>

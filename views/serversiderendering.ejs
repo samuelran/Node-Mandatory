@@ -1,0 +1,25 @@
+<link rel='stylesheet' href='/style.css' />
+<%- include('components/header')%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server-Side Rendering (SSR) in Web Development</title>
+</head>
+<body>
+  <header>
+    <h1>Server-Side Rendering (SSR) in Web Development</h1>
+  </header>
+  <main>
+    <section>
+      <h2>What is Server-Side Rendering (SSR)?</h2>
+      <p>Server-Side Rendering (SSR) is the process of rendering web pages on the server and sending them to the client as fully formed HTML documents. This is in contrast to Client-Side Rendering (CSR), which relies on JavaScript to render pages in the browser.</p>
+      <p>The main advantage of SSR is that it allows search engines to crawl and index your website more easily, which can help with SEO. Additionally, SSR can improve the perceived performance of your website by reducing the amount of JavaScript needed to render the page.</p>
+    </section>
+   <section>
+      <h2>How does Server-Side Rendering (SSR) work?</h2>
+      <p>When a user requests a web page from a server that supports SSR, the server retrieves the necessary data and renders the HTML markup for the requested page. The server then sends the fully formed HTML document to the client, which can display it immediately without any additional processing.</p>
+      <p>Because SSR generates HTML documents on the server, it typically requires more processing power and resources than CSR. However, the benefits of improved SEO and perceived performance can make it a worthwhile tradeoff in some cases.</p>
+    </section>
+  </main>
+</body>
+</html>
