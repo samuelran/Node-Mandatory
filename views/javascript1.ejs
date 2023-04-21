@@ -1,0 +1,53 @@
+<link rel='stylesheet' href='/style.css' />
+<%- include('components/header')%>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basics of Node.js in VS Code</title>
+  </head>
+  <body>
+    <h1>Basics of Node.js in VS Code</h1>
+    <p>Here are some examples you can use for running and writing code in Node.js:</p>
+    <ul>
+      <li><strong>Creating a new Node.js project:</strong> You can create a new Node.js project in VS Code by navigating to a directory where you want to create the project and opening the terminal. Then, type <code>npm init</code> in the terminal and follow the prompts to set up the project. This will create a new <code>package.json</code> file for your project.</li>
+      <li><strong>Installing Node.js modules:</strong> You can install Node.js modules in your project using the <code>npm install</code> command in the terminal. For example, to install the <code>express</code> module, you would type <code>npm install express</code> in the terminal, as referenced in the node section.</li>
+      <li><strong>Creating and running a Node.js file:</strong> You can create a new Node.js file in VS Code by creating a new file with the extension <code>.js</code> and writing your code in it. Then, you can run the file using the terminal. For example, to run a file called <code>app.js</code>, you would navigate to the directory where the file is located and type <code>node app.js</code> in the terminal.</li>
+      <pre><code>
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
+
+app.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+      </code></pre>
+      <li><strong>Debugging a Node.js file:</strong> You can use the built-in debugger in VS Code to debug your Node.js code. To do this, you can add breakpoints to your code by clicking on the line number in the editor. Then, you can start the debugger by clicking on the "Debug" icon in the left sidebar and selecting the "Node.js" option. This will launch a new instance of Node.js with the debugger attached.</li>
+});
+</code></pre>
+<li><strong>Using middleware like Passport:</strong> Middleware is software that runs between the server and the client in order to add additional functionality. One popular middleware package for Node.js is Passport, which is used for authentication. To use Passport in your Node.js project, you can install it using the <code>npm install passport</code> command. Then, you can require it in your Node.js file and use it to implement authentication strategies.</li>
+<pre><code>
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+(username, password, done) => {
+User.findOne({ username: username }, (err, user) => {
+if (err) { return done(err); }
+if (!user) { return done(null, false); }
+if (!user.verifyPassword(password)) { return done(null, false); }
+return done(null, user);
+});
+}
+));
+
+app.post('/login',
+passport.authenticate('local', { successRedirect: '/',
+                               failureRedirect: '/login' }));
+</code></pre>
+<li><strong>Debugging a Node.js file:</strong> You can use the built-in debugger in VS Code to debug your Node.js code. To do this, you can add breakpoints to your code by clicking on the line number in the editor. Then, you can start the debugger by clicking on the "Debug" icon in the left sidebar and selecting the "Node.js" option. This will launch a new instance
+</body>
+</html>

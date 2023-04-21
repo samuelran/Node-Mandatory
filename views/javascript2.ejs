@@ -1,0 +1,45 @@
+<link rel='stylesheet' href='/style.css' />
+<%- include('components/header')%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basics of JavaScript in Node.js in terminal </title>
+  </head>
+  <body>
+    <h1>Some standard stuff you will use creating node.js projects</h1>
+    <p>Node.js is a JavaScript runtime that allows you to run JavaScript code outside of a web browser. Here are some basic examples of how you can use JavaScript in Node.js:</p>
+    <ul>
+      <li><strong>Running a JavaScript file:</strong> You can run a JavaScript file in Node.js by navigating to the directory where the file is located and typing <code>node filename.js</code> in the terminal.</li>
+      <pre><code>
+console.log('Hello, world!');
+      </code></pre>
+      <li><strong>Importing modules:</strong> You can import JavaScript modules in Node.js using the <code>require()</code> function. For example, to import the built-in <code>fs</code> module, you would write <code>const fs = require('fs');</code></li>
+      <pre><code>
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log(data);
+});
+      </code></pre>
+      <li><strong>Creating a web server:</strong> You can create a web server in Node.js using the built-in <code>http</code> module. For example, to create a simple web server that listens on port 3000 and responds with "Hello, world!", you would write:</li>
+      <pre><code>
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, world!');
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+      </code></pre>
+    </ul>
+    <p>These are just a few examples of the many things you can do with JavaScript in Node.js.</a>.</p>
+  </body>
+</html>

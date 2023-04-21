@@ -3,6 +3,10 @@ const app = express();
 const passport = require("passport");
 const flash = require('express-flash')
 const session = require('express-session')
+const initializePassport = require('./passport')
+require('dotenv').config();
+
+const SESSION_SECRET = process.env.SESSION_SECRET;
 
 app.use(express.static("pages"))
 const port = 3000;
@@ -11,8 +15,6 @@ const port = 3000;
 const LocalStrategy = require('passport-local')
 
 app.use(express.static(__dirname + '/public'));
-
-const initializePassport = require('./passport')
 
 initializePassport(
   passport,
@@ -24,6 +26,15 @@ const users = []
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(passport.initialize())
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
+
+
+app.use(flash())
 
 app.get('/', checkAccess,(req, res) => {
   res.render('index.ejs', { username: req.user.username })
@@ -50,6 +61,12 @@ app.get('/gitpage', (req, res) => {
 })
 app.get('/Serversiderendering',(req, res) => {
   res.render('serversiderendering.ejs')
+})
+app.get('/javascript1',(req, res) => {
+  res.render('javascript1.ejs',)
+})
+app.get('/javascript2',(req, res) => {
+  res.render('javascript2.ejs',)
 })
 
 function checkAccess(req, res, next) {
